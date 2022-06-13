@@ -1,0 +1,1 @@
+(((Cyclopes_didactylus:38.0246,(Myrmecophaga_tridactyla:12.8339,Tamandua_mexicana:12.8339):25.1907):20.8529,(Choloepus_didactylus:30.7284,(Bradypus_tridactylus:5.9217,Bradypus_variegatus:5.9217):24.8066):28.1491):9.2283,(Dasypus_novemcinctus_NC:45.3172,(Chlamyphorus_truncatus:32.6113,(Priodontes_maximus:25.7131,Tolypeutes_matacus:25.7129):6.8982):12.706):22.7885);
