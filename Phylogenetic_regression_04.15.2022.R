@@ -91,14 +91,14 @@ name.check(ins, ps1)
 # Run the PGLS: 
 #-------------------NOTE!!! You couldn't see the lines because your variables were in the wrong order!-------------------------#
 
-bvtv1<-gls(BV.TV~IZL, data=ps1, correlation=corBrownian(1, phy = ins, form = ~Taxon))# You need the "form" term because of some update to the package in the last couple years. It gives you a warning if you don't have it. And it refers back to the data, so I think you have to include it in the gls command itself in full so that it can refer to it. It works fine inside your loop (see below).
+bvtv1<-gls(BV.TV~mass_proxy, data=ps1, correlation=corBrownian(1, phy = ins, form = ~Taxon))# You need the "form" term because of some update to the package in the last couple years. It gives you a warning if you don't have it. And it refers back to the data, so I think you have to include it in the gls command itself in full so that it can refer to it. It works fine inside your loop (see below).
 summary(bvtv1)
 
 # Run a linear model without the phy correlation:
-nophybvtv <- gls(BV.TV~IZL, data=ps1)
+nophybvtv <- gls(BV.TV~mass_proxy, data=ps1)
 
 # plot the log-transformed variables:
-plot(BV.TV~IZL, data = data_log, pch = 16)
+plot(BV.TV~mass_proxy, data = data_log, pch = 16)
 
 # plot the regular GLS, teal
 abline(nophybvtv,lwd = 7, col = "#edb742")
