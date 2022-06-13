@@ -29,7 +29,7 @@ candy <- c('#46291b', '#801216', '#cc9a69', '#ad9334', '#c4255b', '#ee97a8', '#9
 #xdata_log <- xdata %>% add_column(bv.tv.log = log(xdata$BV.TV)) %>% add_column(izl.log = log(xdata$CL)) %>% add_column(tb.n.log = log(xdata$TB.N)) %>% add_column(tb.th.log = log(xdata$TB.TH)) %>% add_column(conn.log = log(xdata$Connectivity)) %>% add_column(conn.d.log = log(xdata$Conn.D)) %>% add_column(csa.log = log(xdata$CSA)) %>% add_column(gc.log = log(xdata$GC)) %>% add_column(mil.log = log(xdata$MIL)) %>% add_column(sld.log = log(xdata$SLD))
 data <- read.csv("PGLS_Regression_Data.csv", header = T)
 #data_log <- data %>% add_column(bv.tv.log = log(data$BV.TV)) %>% add_column(proxy.log = log(data$mass_proxy)) %>% add_column(tb.n.log = log(data$TB.N)) %>% add_column(tb.th.log = log(data$TB.TH)) %>% add_column(conn.log = log(data$Connectivity)) %>% add_column(conn.d.log = log(data$Conn.D)) %>% add_column(csa.log = log(data$CSA)) %>% add_column(gc.log = log(data$GC)) %>% add_column(mil.log = log(data$MIL)) %>% add_column(sld.log = log(data$SLD))%>% add_column(mass.log = log(data$mass)) %>% add_column(cw.log = log(data$CW))%>% add_column(izl.log = log(data$IZL))
-data_log <- data_log %>% arrange(desc(row_number()))
+#data_log <- data_log %>% arrange(desc(row_number()))
 
 ######## Hey: this command does the same thing as the above chunk of code, with a lot fewer opportunities for error, and therefore less debugging!
 data_log <- data %>% 
@@ -38,8 +38,9 @@ data_log <- data %>%
 
 ##### Data Prep ######
 #ps1
-ps1 <- data_log %>% filter(pos.for.analysis == "ps1")
-ps1 <- ps1 %>% arrange(desc(row_number()))
+ps1 <- data_log %>% 
+  filter(pos.for.analysis == "ps1") %>% 
+  arrange(desc(row_number()))
 rownames(ps1) <- ps1$Taxon
 
 
